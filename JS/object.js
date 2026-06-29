@@ -2,7 +2,8 @@
 //access the value using obj. key.
 let obj ={
     name: "sagar",
-    age: 30
+    age: 30,
+    roll:123,
 }
 console.log(obj.name)
 let obj1={
