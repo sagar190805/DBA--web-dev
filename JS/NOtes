@@ -15,3 +15,4 @@ Can't make an arrow function a  IIFE function.
 var is a window object that is it is global scope.
 let have a local scope.
 alert is used for  pop up data in a web.
+when this is used it referce to  the window  itself if not pointing to a fucntion.
