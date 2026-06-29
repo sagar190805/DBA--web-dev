@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loader</title>
+</head>
+<style>
+    .loader{
+        height: 210px;
+        width: 210px;
+        border: 5px solid white;
+        border-top: 2px solid black;
+        border-radius: 50%;
+        margin-left:45%;
+        margin-top: 10%;
+        animation:spin 1s linear infinite;
+        background-color: violet;
+    }
+     .loader1{
+        height: 210px;
+        width: 210px;
+        border: 5px solid white;
+        border-top: 2px solid rgb(9, 255, 0);
+        border-radius: 30%;
+        margin-left:45%;
+        /* animation:spin 0.5s linear infinite; */
+        background-color: violet;
+    }
+    @keyframes spin{
+        0%{transform :rotate(0deg);}
+        100%{transform :rotate(360deg);}
+    }
+</style>
+<body>
+    <div class="loader"></div>
+    <div class="loader1"></div>
+</body>
+</html>

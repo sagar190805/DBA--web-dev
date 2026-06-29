@@ -1,0 +1,17 @@
+Smallest unit of programming language is token.
+keywords are predefined words.
+variables are the container  which store  some values and variables are changable.
+constants are the container  but we cant change the value  and are unchangable.
+Datatype : type of data : number, String , boolean, undefined, null, BigInt, Symbol.
+Node js is  a runtime environment.
+Functionn is  a block of code which is used to perform a specific task.
+
+
+Important! => What is IIFE function: Stands for Immidiate invoke function expression, it is usually written in same line or  we can call it inline function.
+Important!.
+
+Can't make an arrow function a  IIFE function.
+3 types of logical operator : && , || , !.
+var is a window object that is it is global scope.
+let have a local scope.
+alert is used for  pop up data in a web.

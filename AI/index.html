@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Byte Solutions — The Vault</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060B1A; --surface:#0E1830; --surface-raised:#132043;
+  --blue:#2e6df6; --blue-soft:#5a8af5; --blue-glow:rgba(46,109,246,.30);
+  --cyan:#28c8e8; --text-primary:#EAF0FF; --text-muted:#93A0C2; --line:#1E2B4D;
+}
+*{box-sizing:border-box;} html,body{margin:0;padding:0;}
+body{background:var(--bg);color:var(--text-primary);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden;
+  background-image:radial-gradient(circle at 10% 0%, rgba(46,109,246,.10), transparent 45%), radial-gradient(circle at 90% 85%, rgba(40,200,232,.08), transparent 50%);}
+a{color:inherit;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px;position:relative;}
+.brand-bar{display:flex;align-items:center;gap:12px;padding:22px 0;border-bottom:1px solid var(--line);}
+.brand-bar img{height:36px;width:36px;object-fit:contain;border-radius:50%;background:#fff;padding:3px;border:1px solid var(--blue-soft);}
+.brand-bar .b-name{font-family:'Poppins',sans-serif;font-weight:600;font-size:14px;}
+.brand-bar .b-loc{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-top:1px;}
+.nav-row{display:flex;gap:6px;margin-left:auto;}
+.nav-btn{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;background:transparent;border:1px solid var(--line);color:var(--text-muted);
+  padding:8px 14px;border-radius:6px;cursor:pointer;transition:.2s;}
+.nav-btn:hover{border-color:var(--blue-soft);color:var(--text-primary);}
+.contact-section{padding:50px 0 30px;text-align:center;border-top:1px solid var(--line);margin-top:40px;}
+.contact-section h2{font-family:'Poppins',sans-serif;color:var(--cyan);font-weight:700;font-size:24px;margin:0 0 18px;}
+.contact-section .c-line{color:var(--text-muted);font-size:14px;margin:6px 0;}
+.contact-icons{display:flex;justify-content:center;gap:18px;margin:22px 0 10px;}
+.contact-icons a{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;}
+.contact-icons .ic-mail{background:var(--cyan);} .contact-icons .ic-call{background:var(--cyan);} .contact-icons .ic-wa{background:#25D366;}
+header.hero{padding:88px 0 60px;border-bottom:1px solid var(--line);position:relative;overflow:hidden;}
+.dial-watermark{position:absolute;top:-50px;right:-50px;width:400px;height:400px;opacity:.55;pointer-events:none;}
+.dial-watermark svg{position:absolute;inset:0;width:100%;height:100%;}
+.dial-watermark .ticks{transform-origin:200px 200px;animation:dialSpin 90s linear infinite;}
+.dial-watermark .dial-logo{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:140px;height:140px;border-radius:50%;background:#fff;padding:16px;box-sizing:border-box;box-shadow:0 0 0 1px var(--blue-soft);}
+@keyframes dialSpin{to{transform:rotate(360deg);}}
+.eyebrow{font-family:'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;font-size:11.5px;color:var(--cyan);opacity:.95;display:flex;align-items:center;gap:10px;margin-bottom:24px;position:relative;z-index:2;}
+.eyebrow::before{content:"";width:20px;height:1px;background:var(--cyan);opacity:.7;}
+h1.title{font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(40px,6vw,72px);line-height:1.05;margin:0 0 22px;max-width:680px;position:relative;z-index:2;}
+h1.title em{font-style:normal;background:linear-gradient(95deg,#4fd8f0,#5a8af5,#7b5cf0);-webkit-background-clip:text;background-clip:text;color:transparent;}
+p.lede{font-size:16.5px;line-height:1.65;max-width:480px;color:var(--text-muted);margin:0 0 36px;position:relative;z-index:2;}
+.stat-line{display:flex;align-items:baseline;gap:14px;font-family:'JetBrains Mono',monospace;position:relative;z-index:2;}
+.stat-line .count{font-size:28px;font-weight:600;color:var(--text-primary);}
+.stat-line .label{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);}
+main{padding:60px 0 40px;position:relative;}
+.section-label{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);margin-bottom:26px;display:flex;justify-content:space-between;align-items:center;}
+.section-label .em{color:var(--cyan);}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 20px;display:flex;flex-direction:column;gap:13px;min-height:230px;position:relative;
+  transition:transform .3s,box-shadow .3s,border-color .3s,background .3s;opacity:0;transform:translateY(14px);animation:riseIn .6s ease forwards;}
+@keyframes riseIn{to{opacity:1;transform:translateY(0);}}
+.box:hover{transform:translateY(-4px);border-color:var(--blue-soft);background:var(--surface-raised);box-shadow:0 16px 32px -12px var(--blue-glow);}
+.plate{display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);}
+.box-title{font-family:'Poppins',sans-serif;font-weight:600;font-size:18px;margin:0;color:var(--text-primary);}
+.box-desc{font-size:13px;line-height:1.55;color:var(--text-muted);flex:1;margin:0;}
+.box-meta{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--text-muted);display:flex;align-items:center;gap:6px;}
+.box-meta .dot{width:5px;height:5px;border-radius:50%;background:var(--blue-soft);display:inline-block;}
+.box.retrieved .box-meta .dot{background:var(--cyan);} .box.retrieved .box-meta .state{color:var(--cyan);}
+.btn-row{display:flex;gap:8px;}
+.btn{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;border-radius:6px;padding:10px 10px;text-align:center;flex:1;
+  display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;cursor:pointer;transition:background .2s,color .2s,border-color .2s;}
+.btn-view{border:1px solid var(--line);color:var(--text-muted);background:transparent;}
+.btn-view:hover{border-color:var(--blue-soft);color:var(--text-primary);}
+.btn-dl{border:1px solid var(--blue-soft);color:var(--blue-soft);background:transparent;}
+.btn-dl:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+.box.retrieved .btn-dl{border-color:var(--cyan);color:var(--cyan);background:rgba(40,200,232,.08);}
+.box.retrieved .btn-dl:hover{background:var(--cyan);color:var(--bg);}
+.seal-sweep{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:0;pointer-events:none;}
+.box.retrieved .seal-sweep{animation:sweep 1.1s ease forwards;}
+@keyframes sweep{0%{opacity:0;transform:scaleX(0);}30%{opacity:1;transform:scaleX(1);}100%{opacity:0;transform:scaleX(1);}}
+footer{margin-top:50px;border-top:1px solid var(--line);padding:38px 0 70px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;}
+.footer-note{font-size:13px;color:var(--text-muted);max-width:460px;line-height:1.6;}
+.footer-note strong{color:var(--text-primary);}
+button.open-vault{font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;background:var(--blue);color:#fff;border:none;padding:16px 26px;
+  border-radius:7px;cursor:pointer;display:flex;align-items:center;gap:10px;transition:background .2s,transform .2s,box-shadow .2s;white-space:nowrap;}
+button.open-vault:hover{background:#3f7dff;transform:translateY(-2px);box-shadow:0 14px 28px -10px var(--blue-glow);}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:2px;}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important;}.dial-watermark .ticks{animation:none;}}
+@media (max-width:760px){.dial-watermark{width:240px;height:240px;top:-30px;right:-70px;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand-bar">
+    <img src="logo.png" alt="Digital Byte Solutions logo">
+    <div><div class="b-name">Digital Byte Solutions</div><div class="b-loc">Dehradun · Uttarakhand</div></div>
+    <div class="nav-row">
+      <button class="nav-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">Home</button>
+      <button class="nav-btn" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">Courses</button>
+      <button class="nav-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</button>
+    </div>
+  </div>
+
+  <header class="hero">
+    <svg class="dial-watermark" viewBox="0 0 400 400" aria-hidden="true">
+      <g class="ticks" stroke="#2e6df6" stroke-width="2" fill="none">
+        <circle cx="200" cy="200" r="160" stroke-dasharray="2 14" stroke-opacity=".5"/>
+        <circle cx="200" cy="200" r="132" stroke-dasharray="1 22" stroke-opacity=".3"/>
+      </g>
+      <circle cx="200" cy="200" r="88" fill="none" stroke="#28c8e8" stroke-width="1.5" stroke-opacity=".4"/>
+    </svg>
+    <div class="dial-watermark"><img class="dial-logo" src="logo.png" alt="Digital Byte Solutions logo"></div>
+
+    <div class="eyebrow">Digital Byte Solutions · Program Vault</div>
+    <h1 class="title">Career Programs, <em>Unlocked.</em></h1>
+    <p class="lede">Eight career-accelerator programs, sealed and ready. View any brochure on the spot, or retrieve it straight to your device — open the whole vault to grab all seven at once.</p>
+    <div class="stat-line"><span class="count">08</span><span class="label">programs sealed</span></div>
+  </header>
+
+  <main>
+    <div class="section-label" id="courses"><span>Programs <span class="em">— No. 01 to 08</span></span><span id="sealedStatus">8 of 8 sealed</span></div>
+    <div class="grid" id="grid"></div>
+  </main>
+
+  <div class="contact-section" id="contact">
+    <h2>Digital Byte Solutions</h2>
+    <div class="c-line">hr@digitalbytesolution.com</div>
+    <div class="c-line">+91 9028370602</div>
+    <div class="contact-icons">
+      <a class="ic-mail" href="mailto:hr@digitalbytesolution.com" aria-label="Email">✉</a>
+      <a class="ic-call" href="tel:+919028370602" aria-label="Call">📞</a>
+      <a class="ic-wa" href="https://wa.me/919028370602" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+    </div>
+    <div class="c-line">© 2026 All Rights Reserved</div>
+  </div>
+
+  <footer>
+    <div class="footer-note"><strong>How this works:</strong> every program below has a real brochure already stored with Digital Byte Solutions. View it in your browser, or retrieve it to save a copy — open the whole vault to retrieve all seven in sequence.</div>
+    <button class="open-vault" id="openVaultBtn">⊙ Open the Vault — All 7</button>
+  </footer>
+</div>
+
+<script>
+const holdings = [
+  {num:"01",title:"Cloud Computing",desc:"Cloud platforms, deployment and job-ready cloud computing skills, learn from industry experts.",file:"brochures/Cloud-Computing.pdf"},
+  {num:"02",title:"AI / ML",desc:"Practical machine learning and AI fundamentals, tools, and applied projects for real-world use.",file:"brochures/AI-ML.pdf"},
+  {num:"03",title:"Data Science",desc:"Data analysis, visualization, and modeling skills to turn raw data into real decisions.",file:"brochures/Data-Science.pdf"},
+  {num:"04",title:"MERN Full Stack",desc:"MongoDB, Express, React and Node — modern JavaScript fullstack from frontend to API to database.",file:"brochures/MERN-Full-Stack.pdf"},
+  {num:"05",title:"MEAN Full Stack",desc:"MongoDB, Express, Angular and Node — a complete enterprise-ready JavaScript fullstack path.",file:"brochures/MEAN-Full-Stack.pdf"},
+  {num:"06",title:"Java Full Stack",desc:"Java, Spring Boot, databases and CI/CD — enterprise-grade fullstack development skills.",file:"brochures/Java-Full-Stack.pdf"},
+  {num:"07",title:"Python Full Stack",desc:"Core Python, Django, REST APIs, databases, Docker and CI/CD — build and ship real fullstack apps.",file:"brochures/Python-Full-Stack.pdf"},
+  {num:"08",title:"AI Prompt Engineering",desc:"Master prompt design and AI tooling to build, automate, and optimize with modern AI systems.",file:"brochures/AI-Prompt-Engineering.pdf"},
+];
+
+const grid = document.getElementById('grid');
+holdings.forEach((h,i)=>{
+  const card = document.createElement('div');
+  card.className='box'; card.id='box-'+i; card.style.animationDelay=(i*70)+'ms';
+  card.innerHTML = `
+    <div class="seal-sweep"></div>
+    <div class="plate">⌬ No. ${h.num}</div>
+    <h3 class="box-title">${h.title}</h3>
+    <p class="box-desc">${h.desc}</p>
+    <div class="box-meta"><span class="dot"></span><span class="state">PDF &middot; sealed</span></div>
+    <div class="btn-row">
+      <a class="btn btn-view" href="${h.file}" target="_blank" rel="noopener">View</a>
+      <a class="btn btn-dl" href="${h.file}" download data-index="${i}">⤓ Retrieve</a>
+    </div>`;
+  grid.appendChild(card);
+  card.querySelector('.btn-dl').addEventListener('click', ()=>markRetrieved(i));
+});
+
+function markRetrieved(i){
+  const card = document.getElementById('box-'+i);
+  if(card.classList.contains('retrieved')) return;
+  card.classList.add('retrieved');
+  card.querySelector('.state').textContent = 'PDF · retrieved';
+  card.querySelector('.btn-dl').innerHTML = '✓ Retrieved';
+  updateStatus();
+}
+function updateStatus(){
+  const r = document.querySelectorAll('.box.retrieved').length, t = holdings.length;
+  document.getElementById('sealedStatus').textContent = r===0?'7 of 7 sealed':r===t?'vault emptied':(t-r)+' of '+t+' still sealed';
+}
+document.getElementById('openVaultBtn').addEventListener('click', ()=>{
+  document.querySelectorAll('.btn-dl').forEach((btn,i)=>setTimeout(()=>btn.click(), i*320));
+});
+</script>
+</body>
+</html>

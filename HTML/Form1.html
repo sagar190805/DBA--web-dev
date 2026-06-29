@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <h1>THIS IS A FORM</h1>
+    <form action ="submit" method="post">
+        <label for="name">Name:</label>
+        <input type = "text" id="name" name="name" placeholder="Name please" required><br><br>
+        <label for="email">Email</label>
+        <input type ="email" id="email" name="email" ><br><br>
+        <label for="password">Password</label>
+        <input type="password" id="pass"><br>
+        <br>
+        <label for="phone no.">Phone no.</label>
+        <input type="tel"><br>
+        <br>
+        <label for="age">age:</label>
+        <input type ="number" min="1" max="3">
+        <br>
+        <label for=" gender">Gender:</label>
+        <input type ="radio" name="gender" value="male">Male
+        <input type="radio" name ="gender" value="female">Female
+        <input type="radio" name ="gender" value="Other">Other
+        <br>
+        <label for ="Death Certificate">Upload Death Certificate:</label>
+        <input type="file" accept="application/pdf">
+        <br>
+        <label for="skills">Skills:</label>
+        <input type="checkbox">java
+        <input type="checkbox">python
+        <input type="checkbox">js
+        <br>
+        <input type ="submit" value="bhar de">
+        <button type="reset">Reset</button>
+    </form>       
+</body>
+<script src="/JS/index.js"></script>
+</html>

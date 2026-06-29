@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Digital Byte Solutions — AI/ML</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- HTML2PDF Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<style>
+/* ===================================================
+   DIGITAL BYTE SOLUTIONS — BROCHURE STYLES
+=================================================== */
+
+:root {
+  --navy: #0a1628;
+  --navy-light: #122036;
+  --deep-blue: #1a2f52;
+  --electric-blue: #2e6df6;
+  --cyan: #28c8e8;
+  --purple: #7b5cf0;
+  --purple-light: #a98af5;
+  --text-light: #eef3fb;
+  --text-muted: #aebdd6;
+  --card-bg: rgba(255, 255, 255, 0.04);
+  --card-border: rgba(255, 255, 255, 0.10);
+
+  --font-display: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--navy);
+  color: var(--text-light);
+}
+
+.page {
+  width: 210mm;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, #0a1628 0%, #0e1c33 45%, #0a1628 100%);
+  page-break-after: always;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Decorative background elements ---------- */
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+.glow-cyan { background: var(--cyan); }
+.glow-purple { background: var(--purple); }
+
+/* ---------- Header (shared) ---------- */
+.brochure-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9mm 14mm 6mm;
+  position: relative;
+  z-index: 2;
+}
+
+.header-logo {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brochure-header .company-name {
+  text-align: right;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  color: var(--text-light);
+  margin-left: auto;
+}
+.brochure-header .company-name span {
+  display: block;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  color: var(--cyan);
+  margin-top: 2px;
+}
+
+/* ===================================================
+   PAGE 1 — COVER
+=================================================== */
+.cover-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 4mm 16mm 0;
+  position: relative;
+  z-index: 2;
+}
+
+.cover-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  border-radius: 30px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--cyan);
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.course-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 1.15;
+  background: linear-gradient(95deg, #4fd8f0 0%, #5a8af5 45%, #9b6cf0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 14px;
+  max-width: 650px;
+}
+
+.tagline {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-light);
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+}
+.tagline .arrow { color: var(--cyan); margin: 0 6px; }
+
+.main-heading {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-light);
+  max-width: 540px;
+  line-height: 1.4;
+  margin-bottom: 30px;
+}
+
+.cover-illustration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+.tool-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 86px;
+}
+.tool-chip .icon-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tool-chip svg { width: 28px; height: 28px; }
+.tool-chip span {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-align: center;
+}
+
+.cover-footer {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  padding: 10mm 14mm 12mm;
+  border-top: 1px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cover-footer .company-block {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13px;
+}
+.cover-footer .company-block .loc {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.contact-row {
+  display: flex;
+  gap: 22px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.contact-row .c-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.contact-row .c-item svg { width: 13px; height: 13px; color: var(--cyan); flex-shrink: 0; }
+
+/* ===================================================
+   PAGE 2 — CURRICULUM
+=================================================== */
+.section-heading-block {
+  padding: 4mm 14mm 4mm;
+  position: relative;
+  z-index: 2;
+}
+.section-eyebrow {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--cyan);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--text-light);
+}
+.section-rule {
+  width: 60px;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--cyan), var(--purple));
+  margin-top: 10px;
+}
+
+.curriculum-body {
+  flex: 1;
+  padding: 4mm 14mm 6mm;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.curriculum-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 16px;
+  margin-top: 6px;
+}
+
+.curriculum-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 13px 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+}
+.curriculum-card .icon-box {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, var(--electric-blue), var(--purple));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.curriculum-card .icon-box svg { width: 17px; height: 17px; color: #fff; }
+.curriculum-card .card-text-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 12.5px;
+  color: var(--text-light);
+  line-height: 1.3;
+}
+
+.curriculum-closing {
+  margin-top: auto;
+  padding-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  border-top: 1px solid var(--card-border);
+}
+.closing-stat {
+  text-align: center;
+}
+.closing-stat .num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 24px;
+  background: linear-gradient(95deg, var(--cyan), var(--purple-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.closing-stat .label {
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+/* ===================================================
+   PAGE 3 — EXCLUSIVE BENEFITS
+=================================================== */
+.benefits-body {
+  flex: 1;
+  padding: 6mm 14mm 6mm;
+  position: relative;
+  z-index: 2;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.benefit-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+}
+.benefit-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--cyan), var(--electric-blue), var(--purple));
+}
+.benefit-card .b-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, var(--electric-blue), var(--purple));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.benefit-card .b-icon svg { width: 23px; height: 23px; color: #fff; }
+.benefit-card .b-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--text-light);
+  line-height: 1.3;
+}
+.benefit-card .b-desc {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.benefit-card.full-width {
+  grid-column: 1 / -1;
+}
+
+/* ---------- Custom Download Button Styles ---------- */
+#download-btn {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 9999;
+  background: linear-gradient(95deg, var(--cyan), var(--purple));
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+#pdf-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+}
+
+/* ---------- Print ---------- */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+  body { background: var(--navy); }
+  #download-btn { display: none !important; }
+  #pdf-container { gap: 0 !important; padding: 0 !important; }
+  .page {
+    width: 210mm;
+    height: 297mm;
+    page-break-after: always;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .page { width: 100%; min-height: auto; }
+  .curriculum-grid, .benefits-grid { grid-template-columns: 1fr 1fr; }
+  .course-title { font-size: 32px; }
+  .cover-illustration { gap: 12px; }
+}
+</style>
+</head>
+<body>
+
+<div id="pdf-container">
+
+<!-- ============================================================
+     PAGE 1 — COVER PAGE
+============================================================ -->
+<section class="page" id="page1">
+  <div class="glow glow-cyan" style="width:380px;height:380px;top:-120px;left:-100px;"></div>
+  <div class="glow glow-purple" style="width:420px;height:420px;bottom:-140px;right:-120px;"></div>
+
+  <header class="brochure-header">
+    <img src="logo1.png" alt="Digital Byte Solutions logo" class="header-logo">
+    <div class="company-name">
+      DIGITAL BYTE SOLUTIONS
+      <span>DEHRADUN · UTTARAKHAND</span>
+    </div>
+  </header>
+
+  <div class="cover-main">
+    <div class="cover-badge">Career Accelerator Program</div>
+    <h1 class="course-title">Cloud Computing with AI </h1>
+    <p class="tagline">Practical Learning <span class="arrow">→</span> Growth <span class="arrow">→</span> Career</p>
+    <h2 class="main-heading">Become a Job-Ready Professional with Industry-Focused Skills</h2>
+
+    <div class="cover-illustration">
+      <div class="tool-chip">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#28c8e8" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <span>Python</span>
+      </div>
+      <div class="tool-chip">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2e6df6" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <span>TensorFlow</span>
+      </div>
+      <div class="tool-chip">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#7b5cf0" stroke-width="1.8"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        </div>
+        <span>Datasets</span>
+      </div>
+      <div class="tool-chip">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#a98af5" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+        </div>
+        <span>Neural Nets</span>
+      </div>
+      <div class="tool-chip">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#28c8e8" stroke-width="1.8"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+        </div>
+        <span>MLOps</span>
+      </div>
+    </div>
+  </div>
+
+  <footer class="cover-footer">
+    <div class="company-block">
+      Digital Byte Solutions
+      <div class="loc">Dehradun, Uttarakhand</div>
+    </div>
+    <div class="contact-row">
+      <div class="c-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.97.36 1.93.68 2.85a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.23-1.23a2 2 0 012.11-.45c.92.32 1.88.55 2.85.68A2 2 0 0122 16.92z"/></svg>
+      </div>
+      <div class="c-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" fill="none" stroke="none"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+      </div>
+      <div class="c-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20 15 15 0 010-20z"/></svg>
+      </div>
+    </div>
+  </footer>
+</section>
+
+<!-- ============================================================
+     PAGE 2 — CURRICULUM & PROGRAMS
+============================================================ -->
+<section class="page" id="page2">
+  <div class="glow glow-purple" style="width:340px;height:340px;top:-100px;right:-100px;"></div>
+
+  <header class="brochure-header">
+    <div class="company-name">
+      DIGITAL BYTE SOLUTIONS
+      <span>DEHRADUN · UTTARAKHAND</span>
+    </div>
+  </header>
+
+  <div class="section-heading-block">
+    <div class="section-eyebrow">AI/ML</div>
+    <h2 class="section-title">CURRICULUM &amp; PROGRAMS</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="curriculum-body">
+    <div class="curriculum-grid">
+
+      <div class="curriculum-card">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+        <div class="card-text-title">Cloud Service Models</div>
+      </div>
+
+      <div class="curriculum-card">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
+        <div class="card-text-title">Deployment Models</div>
+      </div>
+
+      <div class="curriculum-card">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20 15 15 0 010-20z"/></svg></div>
+        <div class="card-text-title">Cloud Architecture &amp; Standards</div>
+      </div>
+
+      <div class="curriculum-card">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+        <div class="card-text-title">Core Virtualization Concepts</div>
+      </div>
+
+      <div class="curriculum-card">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
+        <div class="card-text-title">Virtual Machines &amp; Management</div>
+      </div>
+
+      <div class="curriculum-card">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M4 20h16M4 4h16M8 4v16M16 4v16"/></svg></div>
+        <div class="card-text-title">Storage Virtualization</div>
+      </div>
+
+      <div class="curriculum-card">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+        <div class="card-text-title">Cloud Networking</div>
+      </div>
+
+      <div class="curriculum-card">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+        <div class="card-text-title">Containerization</div>
+      </div>
+
+      <div class="curriculum-card">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
+        <div class="card-text-title">Serverless Architectures</div>
+      </div>
+
+      <div class="curriculum-card">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+        <div class="card-text-title">Cloud Databases</div>
+      </div>
+
+      <div class="curriculum-card">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div>
+        <div class="card-text-title">Big Data &amp; Analytics</div>
+      </div>
+
+      <div class="curriculum-card">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="card-text-title">Cloud Security &amp; Shared Responsibility</div>
+      </div>
+
+      <div class="curriculum-card">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <div class="card-text-title">Governance &amp; Compliance</div>
+      </div>
+
+      <div class="curriculum-card">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <div class="card-text-title">Governance &amp; Auditing</div>
+      </div>
+
+      <div class="curriculum-card">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="card-text-title">Cloud Economics &amp; SLAs</div>
+      </div>
+
+      <div class="curriculum-card">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></div>
+        <div class="card-text-title">DevOps &amp; CI/CD</div>
+      </div>
+
+    </div>
+
+    <div class="curriculum-closing">
+      <div class="closing-stat">
+        <div class="num">16+</div>
+        <div class="label">Core Modules</div>
+      </div>
+      <div class="closing-stat">
+        <div class="num">100%</div>
+        <div class="label">Practical Training</div>
+      </div>
+      <div class="closing-stat">
+        <div class="num">AI/ML</div>
+        <div class="label">Powered Curriculum</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PAGE 3 — EXCLUSIVE BENEFITS
+============================================================ -->
+<section class="page" id="page3">
+  <div class="glow glow-cyan" style="width:360px;height:360px;bottom:-120px;left:-110px;"></div>
+
+  <header class="brochure-header">
+    <div class="company-name">
+      DIGITAL BYTE SOLUTIONS
+      <span>DEHRADUN · UTTARAKHAND</span>
+    </div>
+  </header>
+
+  <div class="section-heading-block">
+    <div class="section-eyebrow">What You Get</div>
+    <h2 class="section-title">EXCLUSIVE BENEFITS</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="benefits-body">
+    <div class="benefits-grid">
+
+      <div class="benefit-card">
+        <div class="b-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M21 11V5a2 2 0 00-2-2h-3"/><path d="M3 11V5a2 2 0 012-2h3"/><rect x="2" y="11" width="20" height="9" rx="2"/><path d="M9 3v8M15 3v8"/></svg>
+        </div>
+        <div class="b-title">Per Program Internship</div>
+        <div class="b-desc">Hands-on internship experience aligned with every program for real workplace exposure.</div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="b-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M9 14l-1.5 7L12 19l4.5 2L15 14"/></svg>
+        </div>
+        <div class="b-title">5+ Certifications</div>
+        <div class="b-desc">Earn multiple recognized certifications that strengthen your professional profile.</div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="b-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/><path d="M11 7v4l3 2"/></svg>
+        </div>
+        <div class="b-title">Tools Training</div>
+        <div class="b-desc">Master industry-standard marketing and AI tools used by professionals every day.</div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="b-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M2 13l3 3M22 13l-3 3"/></svg>
+        </div>
+        <div class="b-title">100% Placement Assistance</div>
+        <div class="b-desc">Dedicated career support, interview preparation, and job referrals until you're placed.</div>
+      </div>
+
+      <div class="benefit-card full-width">
+        <div class="b-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+        </div>
+        <div class="b-title">4+ Industrial Projects</div>
+        <div class="b-desc">Work on real industry projects for practical exposure, portfolio building, and genuine project experience that recruiters value.</div>
+      </div>
+
+      <div class="benefit-card full-width" style="height: auto; padding: 24px; align-items: center; justify-content: center;">
+        <div class="b-title" style="margin-bottom: 12px; font-size: 16px;">Contact Us To Enroll</div>
+        <div class="contact-row" style="width: 100%; justify-content: space-around; flex-wrap: wrap; gap: 16px; font-size: 11.5px;">
+          <div class="c-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.97.36 1.93.68 2.85a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.23-1.23a2 2 0 012.11-.45c.92.32 1.88.55 2.85.68A2 2 0 0122 16.92z"/></svg>
+            +91 9028370602
+          </div>
+          <div class="c-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" fill="none" stroke="none"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+            HR@DigitalByteSolutions.com
+          </div>
+          <div class="c-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20 15 15 0 010-20z"/></svg>
+            DigitalByteSolutions.com
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</div>
+
+<script>
+  function generatePDF() {
+      const element = document.getElementById('pdf-container');
+      const btn = document.getElementById('download-btn');
+      
+      const originalBtnHTML = btn.innerHTML;
+      btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg> Generating...`;
+      
+      const originalGap = element.style.gap;
+      const originalPadding = element.style.padding;
+      element.style.gap = '0px';
+      element.style.padding = '0px';
+
+      const opt = {
+          margin:       0,
+          filename:     'AIML_Brochure.pdf',
+          image:        { type: 'jpeg', quality: 1.0 },
+          html2canvas:  { scale: 2, useCORS: true }, 
+          jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+
+      html2pdf().set(opt).from(element).save().then(() => {
+          element.style.gap = originalGap;
+          element.style.padding = originalPadding;
+          btn.innerHTML = originalBtnHTML;
+      });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nav</title>
+</head>
+<style>
+    body{
+        display:flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: aqua;
+    }
+    .navbar{
+        display: flex;
+        height: 100px;
+        align-items: center;
+        justify-content:space-around;
+        background-color: blueviolet;
+    }
+    .list{
+        display: flex;
+        height: 10px;
+        align-items: center;
+        color:aliceblue;
+    }
+    li{
+        width: 300px;
+        margin:10px;
+    }
+    .hero{
+        color:white;
+        margin:30px;
+        display:flex;
+        flex-direction: row;
+        flex:1;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .foot{
+        height: 150px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: blueviolet;
+        color:aliceblue
+    }
+</style>
+<body>
+     <nav class ="navbar">
+        <ul class="list">
+            <li>Home </li>
+            <li>About</li>
+            <li>Contact</li>
+            <li>Chat</li>
+        </ul>
+    </nav>
+    <div class="hero">
+       <h3> This is the hero section.</h3>
+        <div >
+            <image src="https://imgs.search.brave.com/6FQ2c3s5VqzHsAo0BvhEsDd8mu7KfWeLH7-fsSLTiJQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/eHRyYWZvbmRvcy5j/b20vdGh1bWJzLzFf/MTM1NTQuanBn"> </image>
+        </div>
+    </div>
+    <button style="background-color: blue; color:white">YUP</button>
+    <footer class="foot">
+        <p>Be brave  enough to conquer your fears .</p>
+       <p>You can contact me on this email. sagar@gmail.com</p>
+         
+    </footer>
+</body>
+</html>

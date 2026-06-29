@@ -1,0 +1,31 @@
+
+body{
+    background-color: skyblue;
+}
+nav ul li:has(ul) {
+    position: relative;
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: black;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 150px;
+}
+nav ul li:has(ul):hover > ul {
+    display: block;
+}
+
+nav > ul > li:has(ul):hover > ul {
+    top: 100%;
+    left: 0;
+}
+
+nav ul { display: flex; background: black; list-style: none; padding: 0; margin: 0; }
+nav a { display: block; padding: 15px 20px; color: white; text-decoration: none; }
+nav ul li:hover { background: #222; }

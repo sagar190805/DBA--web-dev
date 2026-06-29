@@ -1,0 +1,12 @@
+VS code is an IDE(Integerated development environment).
+ctrl + ! gives the snippet or boilercode.(the whole body).
+DOCTYPE ->  Type of document and version of html.
+hypertext -> combination  of images,links that is used for navigation between ppages.
+lang = "en" ->  Attribute.
+element= starting tag content closing tag.<h1>hello</h1>.
+attribute+ tags = element.
+6 heading tag in decreasing priority<h1> to <h6>.
+// self closing tag-
+<hr/> -> horizontal line.
+<br/> -> break.
+Data send from frontend(client) to backend(server) is called payload(in technical terminology).
