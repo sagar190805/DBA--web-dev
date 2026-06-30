@@ -15,4 +15,19 @@
                 return acc+val
             },0)
             console.log(num4);
+            //forEach
+            let num5=num.forEach((val,ind,arr)=>{})
+            //forin
+            let obj ={
+                name:"sag",
+                age:34
+            }
+            for(const i in obj){
+                const element=obj[i]
+                console.log(element);
+                
+            }
+            for(i of obj){
+                console.log(i);
+            }
             
