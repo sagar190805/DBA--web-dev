@@ -105,6 +105,7 @@ body{
 
 .footer{
     display: flex;
+    align-items: center;
     height: auto;
     width:auto;
     margin: 30px;
@@ -112,4 +113,5 @@ body{
     justify-content: space-evenly;
     padding: 30px;
     min-height: 50vh;
+    flex-direction: column;
 }
