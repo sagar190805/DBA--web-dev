@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div id="div">
         <div></div>
@@ -14,10 +16,18 @@
     // let div= document.createElement("div");
     // div.innerHTML= "DOM Manipulation<span style='display:none;'> - Hidden Content</span>";
     // document.body.appendChild(div);
-    let a= document.getElementById("div");
-    a.innerHTML= "this is parent div";
-    let b = document.createElement("div");
-    b.innerHTML="this is child div";
+    let a = document.getElementById("div");
+    a.innerHTML = "this is parent div <br>";
+    a.style.color="red";
+    let b = document.createElement("div2");
+    b.innerHTML = "this is child div2<br>";
+    b.style.color="blue";
     a.appendChild(b);
+    let c=document.createElement("div3");
+    c.innerHTML="this is child div3";
+    c.style.color="green";
+    b.appendChild(c);
+    a.removeChild(c);
+    a.innerHTML="This is upadated parent div";
 </script>
 </html>

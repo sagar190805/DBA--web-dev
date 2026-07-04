@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div"></div>
+    <button id="btn" style=" height: 50px; width: 100px; ">black </button>
+    <button id="btn2" style="height: 50px; width: 100px; ">red </button>
+    <button id="btn3" style=" height: 50px; width: 100px; ">green </button>
+    <button id="btn4" style="height: 50px; width: 100px; ">blue </button>          
+    <button id="btn5" style="height: 50px; width: 100px; ">yellow </button>
+    <button id="btn6" style="height: 50px; width: 100px; ">orange </button>
+    <button id="btn7" style="height: 50px; width: 100px; ">pink </button>
+    <button id="btn8" style="height: 50px; width: 100px; ">purple </button>
+    <button id="btn9" style="height: 50px; width: 100px; ">brown </button>
+</body>
+<script>
+    let div = document.getElementById("div");
+    let btn = document.getElementById("btn");
+    let btn2 = document.getElementById("btn2");
+    let btn3 = document.getElementById("btn3");
+    let btn4 = document.getElementById("btn4");
+    let btn5 = document.getElementById("btn5");
+    let btn6 = document.getElementById("btn6");
+    let btn7 = document.getElementById("btn7");
+    let btn8 = document.getElementById("btn8");
+    let btn9 = document.getElementById("btn9");
+    div.style.height = "500px";
+    div.style.width = "500px";
+    div.style.margin="auto";
+    btn.addEventListener("click", () => {
+        div.style.backgroundColor = "black";
+    });
+    btn.style.marginLeft = "200px";
+    btn2.addEventListener("click", () => {
+        div.style.backgroundColor = "red";
+    });
+    btn3.addEventListener("click", () => {
+        div.style.backgroundColor = "green";
+    });
+    btn4.addEventListener("click", () => {
+        div.style.backgroundColor = "blue";
+    });
+    btn5.addEventListener("click", () => {
+        div.style.backgroundColor = "yellow";
+    });
+    btn6.addEventListener("click", () => {
+        div.style.backgroundColor = "orange";
+    });
+    btn7.addEventListener("click", () => {
+        div.style.backgroundColor = "pink";
+    });
+    btn8.addEventListener("click", () => {
+        div.style.backgroundColor = "purple";
+    });
+    btn9.addEventListener("click", () => {
+        div.style.backgroundColor = "brown";
+    });
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1">DOM Level 3</h1>
+    <button id="btn" style=" height: 50px; width: 100px; ">DO IT </button>
+    <button id="btn2" style="height: 50px; width: 100px; ">RESET </button>
+     <button id="btn" style=" height: 50px; width: 100px; ">DO IT </button>
+    <button id="btn2" style="height: 50px; width: 100px; ">RESET </button>
+     <button id="btn" style=" height: 50px; width: 100px; ">DO IT </button>
+    <button id="btn2" style="height: 50px; width: 100px; ">RESET </button>
+    
+</body>
+<script>
+    
+    let h1=document.getElementById("h1");
+    let btn=document.getElementById("btn");
+    h1.style.color="red";
+    btn.addEventListener("click",()=>{
+        h1.style.color="blue";
+    })
+    let btn2=document.getElementById("btn2");
+    btn2.addEventListener("click",()=>{
+        h1.style.color="red";
+    })
+</script>
+</html>
