@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="div"></div>
+    <div id="div" ></div>
     <button id="btn" style=" height: 50px; width: 100px; ">black </button>
     <button id="btn2" style="height: 50px; width: 100px; ">red </button>
     <button id="btn3" style=" height: 50px; width: 100px; ">green </button>
@@ -16,6 +16,7 @@
     <button id="btn7" style="height: 50px; width: 100px; ">pink </button>
     <button id="btn8" style="height: 50px; width: 100px; ">purple </button>
     <button id="btn9" style="height: 50px; width: 100px; ">brown </button>
+    <button id="reset"style="height: 50px; width: 100px; ">reset </button>
 </body>
 <script>
     let div = document.getElementById("div");
@@ -31,6 +32,7 @@
     div.style.height = "600px";
     div.style.width = "800px";
     div.style.margin="auto";
+    div.style.backgroundColor = "lightgray";
     btn.addEventListener("click", () => {
         div.style.backgroundColor = "black";
     });
@@ -58,6 +60,10 @@
     });
     btn9.addEventListener("click", () => {
         div.style.backgroundColor = "brown";
+    });
+    let reset = document.getElementById("reset");
+    reset.addEventListener("click", () => {
+        div.style.backgroundColor = "white";
     });
 </script>
 </html>
