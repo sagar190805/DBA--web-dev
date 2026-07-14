@@ -19,3 +19,4 @@ when this is used it referce to  the window  itself if not pointing to a fucntio
 higher order function:  higher order function ability of the function to accept another  function as a parameter.
 call back function :   the function that is passed as a parameter in a function is known as  cbf.
 Dom is document object model  that is a hierarchichal structure of a html document.
+prompt is used for  user input.
