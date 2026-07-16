@@ -10,6 +10,10 @@ let btn = document.getElementById("btn").addEventListener("click", ()=>{
     li.innerHTML= `${task.value}`
     let complete = document.createElement("button");
     complete.innerHTML= "complete"
+    Object.assign(complete.style ,{
+        color:"red",
+        backgroundColor:"blue",
+    })
     complete.addEventListener("click", ()=>{
         li.style.textDecoration="line-through"
     })
