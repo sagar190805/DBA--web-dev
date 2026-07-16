@@ -5,15 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fair</title>
 </head>
+<style>
+    .main{
+        background-color: grey;
+        height: 500px;
+        width:auto;
+        margin: 50px 50px 50px 50px;
+        border: 20px solid black;
+        border-radius: 20px;
+    }
+    #distance{
+        margin-top: 20px;
+        height:30px;
+        width:100px;
+        border:2px solid black;
+        
+    }
+    #rate{
+        margin-top:20px;
+        height: 30px;
+        width: 100px;
+        border:2px solid black;
+    }
+</style>
 <body>
-    <label for="dis">Distance</label>
+    <div class="main">
+    <label for="dis" style="color:orange; font-weight: 200;">Distance</label>
     <input type="number" id="distance" placeholder="enter distance">
-    <label for = "rate">Rate</label>
+    <label for = "rate" style="color:orange; font-weight: 200;">Rate</label>
     <input type="number" id="rate" placeholder="enter the rate per km ">
     <div id ="result">
 
     </div>
     <button id="btn">Calculate</button>
+    </div>
 </body>
 <script src =fair.js ></script>
 </html>
