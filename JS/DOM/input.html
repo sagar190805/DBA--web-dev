@@ -5,12 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    .main{
+        background-color: grey;
+        height: 600px;
+        width: auto;
+    }
+    #task{
+        background-color: beige;
+        width:300px;
+        height: 40px;
+        margin-top:50px;
+        margin-left: 200px;
+        border:5px solid black;
+        border-radius:10px;
+    }
+    #btn{
+        background-color: beige;
+        height: 30px;;
+        width:100px;
+        border: 5px solid black;
+        border-radius: 20px;
+        color:brown;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    #list{
+        margin-left:200px;
+        margin-top: 30px;
+        height:400px;
+        width: 250px;
+        background-color: darkgray;
+        border:5px solid beige;
+    }
+</style>
 <body>
+    <div class="main">
     <input type="text" placeholder="enter your task" id="task">
     <button id="btn" onclick="handleClick">Add</button>
-    <ul id="list"> 
-        
+    <ul id="list">    
     </ul>
+    </div>
 </body>
 <script src="input.js"></script>
 </html>
