@@ -8,6 +8,19 @@ let btn = document.getElementById("btn").addEventListener("click", ()=>{
     }else{
     let li=document.createElement("li");
     li.innerHTML= `${task.value}`
-    list.appendChild(li);
+    let complete = document.createElement("button");
+    complete.innerHTML= "complete"
+    complete.addEventListener("click", ()=>{
+        li.style.textDecoration="line-through"
+    })
+    let dlt = document.createElement("button")
+    dlt.innerHTML="delete"
+    dlt.addEventListener("click", ()=>{
+        li.remove();
+    })
+    task.value=""
+    li.appendChild(complete)
+    li.appendChild(dlt)
+    list.appendChild(li)
     }
 })
